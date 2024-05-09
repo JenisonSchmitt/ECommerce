@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-BR">
+    <head>
+        <title>CHT - Editar Conta</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="keywords" content='ConstruHub Talentos'>
+        <meta name="description" content='ConstruHub Talentos'>
+        <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
+        <link rel="stylesheet" type="text/css" href="css/vendor.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" type="imagex/png" href="images/icone.ico">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="js/editarconta.js"></script>
+    </head>
+    <body>
+        <div class="preloader"></div>
+        <header id="header" class="onepage-menu fixed">
+            <div id="header-wrap">
+                <nav id="navbar">
+                    <div class="main-logo">
+                        <a href="index.html">CHT</a>
+                    </div>
+                </nav>
+            </div><!--header-wrap-->
+        </header>
+        <section id="intro" class="scrollspy-section">
+            <div class="main-slider">
+                <div class="slider-item jarallax-keep-img">
+                    <img src="images/foto16.png" alt="banner" class="jarallax-img">
+                    <div class="banner-content">
+                        <br>
+                        <br>
+                        <br>
+                        <h3 class="banner-title txt-fx">Editar Conta</h3>
+                        <div class="btn-wrap">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br><br>
+        <section id="editar" class="bg-personality_18">
+            <div class="bg-personality_26 container_login" id="cartItems">
+                <form class="form_login" method="post" onsubmit="return validarFormulario()" action="editarconta.php"><br>
+                    <label class="label_login" for="email">Email:</label>
+                    <input class="input_login" type="email" id="email" name="email"placeholder="exemplo@gmail.com"required>
+                    <span id="email_error" class="error-message"></span><br>
+
+                    <label class="label_login" for="telefone">Telefone Celular:</label>
+                    <input class="input_login" type="tel" id="telefone" name="telefone" placeholder="(99) 12345-6789" oninput="formatarTelefone(this)" required>
+                    <span id="telefone_error" class="error-message"></span><br>
+
+                    <label class="label_login" for="endereco">Endereço:</label>
+                    <input class="input_login" type="text" id="endereco" name="endereco" placeholder="Rua, Bairro e Cidade" required>
+                    <br>
+                    <input class="input_login" type="submit" value="Atualizar Dados">
+                    <h5 onclick="goBack()" class="center h5_login">Voltar</h5>
+                </form>
+            </div>
+        </section>
+        <br>
+        <div class="center">
+            <a href="servicos.html" class="btn btn-outline-dark rounded-pill text-uppercase is-checked">Serviços</a>
+            <br><br>
+        </div>
+        <section id="testimonial" class="scrollspy-section bg-personality_4 padding-large">
+            <footer id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-menu menu-item-01">
+                                <img src="images/logo_.png" alt="Lujinha" width="100" height="100" class="footer-logo">
+                                <p class="paragrafo_1">Buscaremos sempre lhe atender da melhor forma, buscando sempre uma performance que lhe agrade cada vez mais</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="footer-menu menu-item-02">
+                                <h5>Outros serviços</h5>
+                                <ul class="menu-list">
+                                    <li class="menu-item">
+                                        <a href="index.html">Página Principal</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="sobrenos.html#sobrenos">Nossos Objetivos</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="sobrenos.html#diferencial">Nosso Diferencial</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="faleconosco.html">Fale Conosco</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="sobrenos.html">Sobre Nós</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-menu menu-item-03">
+                                <h5>Informações de Contato</h5>
+                                <ul class="menu-list">
+                                    <li class="menu-item">
+                                        <p class="paragrafo">
+                                        <i class="icon icon-location"></i>Centro, Tubarão/SC</p>
+                                    </li>
+                                    <li class="menu-item">
+                                        <p class="paragrafo">
+                                        <i class="icon icon-location2"></i>@schmitt_jenison</p>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="https://api.whatsapp.com/send?phone=48991723006&amp;text=Olá, gostaria de mais informações sobre os serviços!" target="_blank" class="paragrafo">
+                                            <p>
+                                            <iconify-icon icon="akar-icons:whatsapp-fill">   </iconify-icon>     (48) 9 9172-3006</p>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <p class="paragrafo">
+                                        <i class="icon icon-envelope-o"></i>construhubtalentos@gmail.com</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <div id="testimonial_" class="scrollspy-section bg-personality_5 padding-large">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="copyright">
+                            <p class="paragrafo">© 2024 Jenison Schmitt. Direitos Reservados</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="copyright text-right">
+                            <a href="https://api.whatsapp.com/send?phone=48991723006&amp;text=Olá, gostei do seu Software, como posso contratar?" target="_blank" class="paragrafo"><p class="paragrafo">Produzido e Desenvolvido por: Jenison Schmitt</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/ui-easing.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
