@@ -3,12 +3,8 @@ $servername = "localhost";
 $database = "u228502032_ecommerce";
 $username = "u228502032_ecommerce";
 $password = "Testeecommerce1234*";
-$cpf = $_POST['CPF'];
-$nome = $_POST['nome'];
-$telefone = $_POST['telefone'];
-$email = $_POST['email'];
-$nascimento = $_POST['nascimento'];
 
+$nome = $_POST['nome'];
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -16,8 +12,9 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
 }
- 
-$sql = "INSERT INTO cliente (CPF, nome, telefone, email, nascimento) VALUES ('$cpf', '$nome', '$telefone', '$email', STR_TO_DATE('$nascimento','%d/%m/%Y'))";
+
+$sql = "DELETE FROM cupons WHERE nome = '$nome'";
+
 if (mysqli_query($conn, $sql)) {
       echo "
 <!DOCTYPE html>
@@ -55,11 +52,11 @@ if (mysqli_query($conn, $sql)) {
                               <br>
                               <br>
                               <br>
-                              <h3 class='paragrafo_5'>Cliente Cadastrado</h3>
+                              <h3 class='paragrafo_5'>Cupom Excluído</h3>
                         </div>
                         <br>
                         <div class='btn-wrap'>
-                              <a href='https://www.lujinhadeluxo.com.br/admin/cadastroCliente.html' class='btn btn-accent btn-xlarge btn-rounded'>Cadastrar mais Clientes</a>
+                              <a href='https://www.lujinhadeluxo.com.br/admin/CupomExcluir.html' class='btn btn-accent btn-xlarge btn-rounded'>Excluir mais Cupons</a>
                         </div>
                   </section>
                   <script src='js/jquery-1.11.0.min.js'></script>
@@ -107,11 +104,11 @@ if (mysqli_query($conn, $sql)) {
                               <br>
                               <br>
                               <br>
-                              <h3 class='paragrafo_5'>Cliente não Cadastrado, por favor, volte e verifique os dados</h3>
+                              <h3 class='paragrafo_5'>Cumpom não excluído, por favor, volte e verifique os dados</h3>
                         </div>
                         <br>
                         <div class='btn-wrap'>
-                              <a href='https://www.lujinhadeluxo.com.br/admin/cadastroClientehtml' class='btn btn-accent btn-xlarge btn-rounded'>Cadastrar novamente</a>
+                              <a href='https://www.lujinhadeluxo.com.br/admin/CupomExcluir.html' class='btn btn-accent btn-xlarge btn-rounded'>Excluir novamente</a>
                         </div>
                   </section>
                   <script src='js/jquery-1.11.0.min.js'></script>

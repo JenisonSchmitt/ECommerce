@@ -3,11 +3,14 @@ $servername = "localhost";
 $database = "u228502032_ecommerce";
 $username = "u228502032_ecommerce";
 $password = "Testeecommerce1234*";
-$cpf = $_POST['CPF'];
-$nome = $_POST['nome'];
-$telefone = $_POST['telefone'];
-$email = $_POST['email'];
-$nascimento = $_POST['nascimento'];
+
+$nomehtml = $_POST['nomehtml'];
+$nome = $_POST['nomeProduto'];
+$descricao = $_POST['descricao'];
+$valor = $_POST['valor'];
+$marca = $_POST['marca'];
+$quantidade = $_POST['quantidade'];
+$codigo = $_POST['codigo'];
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -17,8 +20,13 @@ if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
 }
  
-$sql = "INSERT INTO cliente (CPF, nome, telefone, email, nascimento) VALUES ('$cpf', '$nome', '$telefone', '$email', STR_TO_DATE('$nascimento','%d/%m/%Y'))";
-if (mysqli_query($conn, $sql)) {
+$sql1 = "UPDATE `produtos_site` SET `nomehtml` = '$nomehtml', `nome` = '$nome', `descricao` = '$descricao', `valor` = '$valor', `marca` = '$marca', `quantidade` = '$quantidade' WHERE `codigo` = '$codigo'";
+$sql2 = "UPDATE `produto` SET `valor` = '$valor' WHERE `codigo` = '$codigo'";
+
+$result1 = mysqli_query($conn, $sql1);
+$result2 = mysqli_query($conn, $sql2);
+
+if ($result1 && $result2) {
       echo "
 <!DOCTYPE html>
       <html class='no-js' lang='pt'>
@@ -55,11 +63,11 @@ if (mysqli_query($conn, $sql)) {
                               <br>
                               <br>
                               <br>
-                              <h3 class='paragrafo_5'>Cliente Cadastrado</h3>
+                              <h3 class='paragrafo_5'>Produto Atualizado</h3>
                         </div>
                         <br>
                         <div class='btn-wrap'>
-                              <a href='https://www.lujinhadeluxo.com.br/admin/cadastroCliente.html' class='btn btn-accent btn-xlarge btn-rounded'>Cadastrar mais Clientes</a>
+                              <a href='https://www.lujinhadeluxo.com.br/admin/produtossite.html' class='btn btn-accent btn-xlarge btn-rounded'>Atualizar mais Produtos</a>
                         </div>
                   </section>
                   <script src='js/jquery-1.11.0.min.js'></script>
@@ -107,11 +115,11 @@ if (mysqli_query($conn, $sql)) {
                               <br>
                               <br>
                               <br>
-                              <h3 class='paragrafo_5'>Cliente não Cadastrado, por favor, volte e verifique os dados</h3>
+                              <h3 class='paragrafo_5'>Produto não atualizado, por favor, volte e verifique os dados</h3>
                         </div>
                         <br>
                         <div class='btn-wrap'>
-                              <a href='https://www.lujinhadeluxo.com.br/admin/cadastroClientehtml' class='btn btn-accent btn-xlarge btn-rounded'>Cadastrar novamente</a>
+                              <a href='https://www.lujinhadeluxo.com.br/admin/produtosiste.html' class='btn btn-accent btn-xlarge btn-rounded'>Atualizar novamente</a>
                         </div>
                   </section>
                   <script src='js/jquery-1.11.0.min.js'></script>
